@@ -1,0 +1,25 @@
+services:
+  db:
+    image: postgres:14.2
+    environment:
+      POSTGRES_DB: tutrialdb
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+    volumes:
+      - db-data:/var/lib/postgresql/data
+  pgadmin4:
+    image: dpage/pgadmin4:6.9
+    depends_on:
+      - db
+    environment:
+      PGADMIN_DEFAULT_EMAIL: one1218all38@icloud.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    ports:
+      - 8080:80
+    volumes:
+      - pgadmin4-data:/var/lib/pgadmin
+volumes:
+  db-data:
+  pgadmin4-data:
