@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'tutrialdb',
         'USER': 'testuser',
         'PASSWORD': 'password',
-        'HOST': 'db',
+        'HOST': 'localhost',
         'PORT': 5432
     }
 }
